@@ -1,10 +1,17 @@
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     $(".card-header").find("a").click(function () {
-//         var id = $(this).attr("id");
-//         $(this).addClass('active').siblings().removeClass('active');
-//         $(this).addClass('not-active').siblings().removeClass('not-active');
-//         $("#" + id).addClass('active').siblings().removeClass('active');
-//         $("#" + id).addClass('not-active').siblings().removeClass('not-active');
-//     });
+// let entrar = document.getElementById('entrar');
+// let cadastrar = document.getElementById('cadastrar');
+// let click = false;
+// entrar.addEventListener("click", () => {
+//     click = true;
+//     if (click) {
+//         entrar.classList.add("active");
+//         cadastrar.classList.remove("active");
+//     }
+// });
+// cadastrar.addEventListener("click", () => {
+//     click = true;
+//     if (click) {
+//         cadastrar.classList.add('active');
+//         entrar.classList.remove("active");
+//     }
 // });
