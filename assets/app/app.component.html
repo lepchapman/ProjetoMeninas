@@ -3,13 +3,12 @@
         <div class="col-12 ">
             <div class="card text-center">
                 <div class="card-header">
-                    <a href="#" class="link-nav active"><i class="fa fa-user"></i>Login</a>
-                    <a href="#" class="link-nav not-active"><i class="fa fa-user-plus"></i>Cadastro</a>
+                    <a [routerLink]="['Entrar']" class="link-nav active"><i class="fa fa-user"></i>Entrar</a>
+                    <a [routerLink]="['Cadastrar']" class="link-nav not-active"><i class="fa fa-user-plus"></i>Cadastrar</a>
                 </div>
                 <div class="card-body">
-                    <app-entrar></app-entrar>
                     <!--Aqui fica o compoments Cadastro/Login-->
-                    <app-cadastrar></app-cadastrar>
+                    <router-outlet></router-outlet>
                 </div>
 
                     <!-- 
