@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { EntrarComponent } from "./components/entrar/entrar.component";
 
 @Component({
   selector: "my-app",
@@ -19,3 +20,4 @@ import { Component } from "@angular/core";
   ],
 })
 export class AppComponent {}
+

@@ -1,0 +1,14 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input placeholder="Email" type="email" class="form-control" id="email" aria-describedby="Email"
+            formControlName="emailTs">
+    </div>
+    <div class="form-group">
+        <input placeholder="Senha" type="password" class="form-control" id="pass" aria-describedby="Senha"
+            formControlName="passwordTS">
+    </div>
+    <div class="form-group mt-2">
+        <button type="submit" class="btn btn-primary btn-lg btn-block login-button"
+            [disabled]="!myForm.valid">Logar</button>
+    </div>
+</form>
