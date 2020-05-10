@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px sans-serif, "Lucida Grande", Helvetica, Arial;
 }
 
 a {
@@ -25,3 +25,51 @@ a.danger {
 input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
+
+
+.container .row {
+  margin: 50px auto;
+  width: 60%;
+}
+  
+a.link-nav {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 90px;
+  /* color:#cccccc; */
+}
+.not{
+  color:red;
+}
+  
+.message-response {
+  width: 100%;
+  color: #ffffff;
+}
+  
+.alert-error {
+  background: rgba(255, 0, 0, 0.7);
+  margin: 0 7%;
+  margin-bottom: 15px;
+}
+  
+.alert-sucess {
+  background: rgba(0, 128, 0, 0.7);
+  margin: 0 7%;
+  margin-bottom: 15px;
+}
+  
+.fa {
+  font-size: 25px;
+  padding: 5px 10px;
+}
+  
+.card-header {
+  font-weight: bold;
+  color: #bdbdbd;
+}
+  
+form {
+  padding: 10px 30px 10px 30px;
+}
+/* .router-link-active { background-color: red; } */

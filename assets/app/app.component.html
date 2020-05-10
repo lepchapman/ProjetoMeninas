@@ -3,11 +3,13 @@
         <div class="col-12 ">
             <div class="card text-center">
                 <div class="card-header">
-                    <a href="#" class="link-nav active"><i class="fa fa-user"></i>Login</a>
-                    <a href="#" class="link-nav not-active"><i class="fa fa-user-plus"></i>Cadastro</a>
+                    <!-- [ngStyle]="{'background-color': style1 ? 'red' : (style2 ? 'blue' : null) }"  -->
+                    <a [routerLink]="['entrar']" class="link-nav"><i class="fa fa-user"></i>Entrar</a>
+                    <a [routerLink]="['cadastrar']" class="link-nav"><i class="fa fa-user-plus"></i>Cadastro</a>
                 </div>
                 <div class="card-body">
                     <!--Aqui fica o compoments Cadastro/Login-->
+                   <router-outlet></router-outlet>
                 </div>
 
                     <!-- 
