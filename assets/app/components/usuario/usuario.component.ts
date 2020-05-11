@@ -6,8 +6,8 @@ import { UsuarioService } from "./usuario.service";
   template:``,
 })
 export class UsuarioComponent {
-  @Input() usuarioVarClasse: Usuario = new Usuario("", "");
-  constructor(private UsuarioServiceObj: UsuarioService) {}
+   @Input() usuarioVarClasse: Usuario = new Usuario("", "");
+   constructor(private UsuarioServiceObj: UsuarioService) {}
   // onEditService(){
   //   this.UsuarioServiceObj.editUsuario(this.usuarioVarClasse);
   // }
