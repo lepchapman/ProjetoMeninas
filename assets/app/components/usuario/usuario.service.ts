@@ -10,7 +10,6 @@ export class UsuarioService {
   constructor(private http: Http) {}
 
   addUsuario(usuario: Usuario) {
-    console.log(this.UsuarioSService);
     const bodyReq = JSON.stringify(usuario);
     const myHeaders = new Headers({ "Content-Type": "application/json" });
     return this.http
@@ -19,8 +18,7 @@ export class UsuarioService {
       })
       .map((responseRecebida: Response) => {
         var aux = responseRecebida.json();
-        console.log('aux:',aux);
-        console.log("responseRecebidaUserAdd:", aux);
+        console.log("responseRecebida:", aux);
         const newObjUsuario = new Usuario(
           aux.objUserSave.email,
           aux.objUserSave.password,

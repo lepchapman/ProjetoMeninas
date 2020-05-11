@@ -26,9 +26,7 @@ export class CadastrarComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
     const usuarioAux = new Usuario(form.value.emailTS, form.value.passwordTS,form.value.firstNameTS,form.value.lastNameTS);
-   console.log('usuarioAux:',usuarioAux);
    debugger;
     this.usuarioService.addUsuario(usuarioAux).subscribe(
       (dadosSucesso) => console.log(dadosSucesso),
