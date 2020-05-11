@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import { Router, RouterLink } from '@angular/router';
+import { UsuarioService } from "../app/components/usuario/usuario.service";
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
+  providers:[UsuarioService]
 })
 export class AppComponent {
 

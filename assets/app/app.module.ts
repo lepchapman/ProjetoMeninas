@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule , ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 import { myrouting } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { CadastrarComponent } from "./components/cadastrar/cadastrar.component";
@@ -10,7 +11,7 @@ import { UsuarioComponent } from "./components/usuario/usuario.component";
     declarations: [
         AppComponent,CadastrarComponent,EntrarComponent,UsuarioComponent
     ],
-    imports: [BrowserModule,FormsModule,ReactiveFormsModule,myrouting],
+    imports: [BrowserModule,FormsModule,ReactiveFormsModule,myrouting,HttpModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {

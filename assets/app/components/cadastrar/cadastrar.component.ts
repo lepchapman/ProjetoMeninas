@@ -1,15 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { Usuario } from "../usuario/usuario.model";
+import { UsuarioService } from "../usuario/usuario.service";
 
 @Component({
   selector: "app-cadastrar",
   templateUrl: "./cadastrar.component.html",
   styleUrls: ["./cadastrar.component.css"],
+
 })
 export class CadastrarComponent implements OnInit {
   usuarioLoad: Usuario;
   myForm: FormGroup;
+  constructor(private usuarioService: UsuarioService) {}
   ngOnInit() {
     this.myForm = new FormGroup({
       firstNameTS: new FormControl(null, Validators.required),
@@ -21,33 +24,23 @@ export class CadastrarComponent implements OnInit {
       passwordTS: new FormControl(null, Validators.required),
     });
   }
-  //constructor(private messageService: MessageService) {}
-  // messageLoad: Message;
+
   onSubmit(form: NgForm) {
     console.log(form);
-    //form.resetForm();
-    //   this.myForm.reset();
-    // if (this.messageLoad) {
-    //   this.messageLoad.content = form.value.myContentngForm;
-    //   this.messageService.updateMessage(this.messageLoad).subscribe(
-    //       dadosSucesso => console.log(dadosSucesso),
-    //       dadosErro => console.log(dadosErro)
-    //   );
-    //   this.messageLoad = null;
-    // } else {
-    //   const messageAux = new Message(form.value.myContentngForm, "Teste");
-    //   this.messageService.addMessage(messageAux).subscribe(
-    //     (dadosSucesso) => console.log(dadosSucesso),
-    //     (dadosErro) => console.log(dadosErro)
-    //   );
-
-    // }
+    const usuarioAux = new Usuario(form.value.emailTS, form.value.passwordTS,form.value.firstNameTS,form.value.lastNameTS);
+   console.log('usuarioAux:',usuarioAux);
+   debugger;
+    this.usuarioService.addUsuario(usuarioAux).subscribe(
+      (dadosSucesso) => console.log(dadosSucesso),
+      (dadosErro) => console.log(dadosErro)
+    );
+    form.resetForm();
   }
-  // onSave(textCosole: string) {
-  //   const messageAux = new Message(textCosole, "Teste");
-  //   this.messageService.addMessage(messageAux);
-  //   console.log(textCosole);
-  // }
+  onSave(textCosole: string) {
+    const usuarioAux = new Usuario(textCosole, "Teste");
+    this.usuarioService.addUsuario(usuarioAux);
+    console.log(textCosole);
+  }
   // ngOnInit() {
   //   this.messageService.messageIsEdit.subscribe(
   //     (message: Message) => (this.messageLoad = message)

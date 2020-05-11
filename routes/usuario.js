@@ -1,19 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-var User = require('../models/user');
-
+var Usuario = require('../models/usuario');
+debugger;
 router.post('/', (req, res, next) => {
-    var user = new User({
+    console.log("req:", req);
+    console.log("next:", next);
+    console.log("res:", res);
+    var usuario = new Usuario({
         email: req.body.email,
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
 
     });
-    console.log("user:", user);
-    user.save((err, result) => {
-        console.log("messageB:", user);
+    console.log("user:", usuario);
+    usuario.save((err, result) => {
+        console.log("Usuario:", usuario);
         console.log("err:", err);
         console.log("result:", result);
         if (err) {
@@ -27,5 +30,6 @@ router.post('/', (req, res, next) => {
             objUserSave: result
         })
     });
-    console.log("user:", user);
+    console.log("usuario:", usuario);
 });
+module.exports = router;
