@@ -7,12 +7,14 @@ import { AppComponent } from "./app.component";
 import { CadastrarComponent } from "./components/cadastrar/cadastrar.component";
 import { EntrarComponent } from "./components/entrar/entrar.component";
 import { UsuarioComponent } from "./components/usuario/usuario.component";
+import { HomeComponent } from "./components/home/home.component";
 @NgModule({
   declarations: [
     AppComponent,
     CadastrarComponent,
     EntrarComponent,
     UsuarioComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

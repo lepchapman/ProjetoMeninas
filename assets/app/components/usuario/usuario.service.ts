@@ -4,6 +4,13 @@ import { Usuario } from "./usuario.model";
 import "rxjs/Rx";
 import { Observable } from "rxjs";
 
+//Adicionando os imports para o jwt
+import { HttpClient, HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { CanActivate, Router } from '@angular/router';
+import { tap, shareReplay } from 'rxjs/operators';
+import * as jwtDecode from 'jwt-decode';
+import * as moment from 'moment';
+
 @Injectable()
 export class UsuarioService {
   private UsuarioSService: Usuario[] = [];

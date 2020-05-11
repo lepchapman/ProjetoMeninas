@@ -4,9 +4,6 @@ var router = express.Router();
 var Usuario = require('../models/usuario');
 debugger;
 router.post('/', (req, res, next) => {
-    console.log("req:", req);
-    console.log("next:", next);
-    console.log("res:", res);
     var usuario = new Usuario({
         email: req.body.email,
         password: req.body.password,
@@ -14,11 +11,7 @@ router.post('/', (req, res, next) => {
         lastName: req.body.lastName,
 
     });
-    console.log("user:", usuario);
     usuario.save((err, result) => {
-        console.log("Usuario:", usuario);
-        console.log("err:", err);
-        console.log("result:", result);
         if (err) {
             return res.status(500).json({
                 myErroTitle: "Cadastrado não realizado",
@@ -30,6 +23,5 @@ router.post('/', (req, res, next) => {
             objUserSave: result
         })
     });
-    console.log("usuario:", usuario);
 });
 module.exports = router;
