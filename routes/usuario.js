@@ -21,12 +21,12 @@ router.post('/', (req, res, next) => {
         console.log("result:", result);
         if (err) {
             return res.status(500).json({
-                myErroTitle: "Erro ao tentar cadastrar o usuario",
+                myErroTitle: "Cadastrado não realizado",
                 myError: err
             });
         }
         res.status(200).json({
-            myMsgSucess: "Usuario cadastrado com sucesso",
+            myMsgSucess: "Cadastrado realizado com sucesso",
             objUserSave: result
         })
     });
