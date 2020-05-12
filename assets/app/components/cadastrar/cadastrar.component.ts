@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 import { Usuario } from "../usuario/usuario.model";
 import { UsuarioService } from "../usuario/usuario.service";
 
@@ -7,12 +8,12 @@ import { UsuarioService } from "../usuario/usuario.service";
   selector: "app-cadastrar",
   templateUrl: "./cadastrar.component.html",
   styleUrls: ["./cadastrar.component.css"],
-
 })
 export class CadastrarComponent implements OnInit {
   usuarioLoad: Usuario;
   myForm: FormGroup;
-  constructor(private usuarioService: UsuarioService) {}
+  error: any;
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
   ngOnInit() {
     this.myForm = new FormGroup({
       firstNameTS: new FormControl(null, Validators.required),
@@ -24,28 +25,31 @@ export class CadastrarComponent implements OnInit {
       passwordTS: new FormControl(null, Validators.required),
     });
   }
-
   onSubmit(form: NgForm) {
-    const usuarioAux = new Usuario(form.value.emailTS, form.value.passwordTS,form.value.firstNameTS,form.value.lastNameTS);
-   debugger;
-    this.usuarioService.addUsuario(usuarioAux).subscribe(
-      (dadosSucesso) => console.log(dadosSucesso),
-      (dadosErro) => console.log(dadosErro)
+    const usuarioAux = new Usuario(
+      form.value.emailTS,
+      form.value.passwordTS,
+      form.value.firstNameTS,
+      form.value.lastNameTS
+    );
+    debugger;
+    this.usuarioService.cadastrarUsuario(usuarioAux).subscribe(
+      (dadosSucesso) => {
+        console.log(dadosSucesso);
+        // this.router.navigate(["entrar"]);
+      },
+      (dadosErro) => {
+        this.error = dadosErro;
+        console.log(dadosErro);
+        //this.router.navigate(["cadastrar"]);
+      }
     );
     form.resetForm();
   }
   onSave(textCosole: string) {
     const usuarioAux = new Usuario(textCosole, "Teste");
-    this.usuarioService.addUsuario(usuarioAux);
+    this.usuarioService.cadastrarUsuario(usuarioAux);
     console.log(textCosole);
   }
-  // ngOnInit() {
-  //   this.messageService.messageIsEdit.subscribe(
-  //     (message: Message) => (this.messageLoad = message)
-  //   );
-  // }
-  // onClear(form: NgForm) {
-  //   this.messageLoad = null;
-  //   form.resetForm();
-  // }
+
 }

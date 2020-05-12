@@ -11,6 +11,7 @@ router.post('/', (req, res, next) => {
         lastName: req.body.lastName,
 
     });
+    console.log("user:", usuario);
     usuario.save((err, result) => {
         if (err) {
             return res.status(500).json({
