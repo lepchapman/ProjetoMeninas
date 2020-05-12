@@ -36,12 +36,12 @@ export class CadastrarComponent implements OnInit {
     this.usuarioService.cadastrarUsuario(usuarioAux).subscribe(
       (dadosSucesso) => {
         console.log(dadosSucesso);
-        // this.router.navigate(["entrar"]);
+         this.router.navigate(["entrar"]);
       },
       (dadosErro) => {
         this.error = dadosErro;
         console.log(dadosErro);
-        //this.router.navigate(["cadastrar"]);
+        this.router.navigate(["cadastrar"]);
       }
     );
     form.resetForm();

@@ -20,6 +20,13 @@ export class UsuarioService {
   cadastrarUsuario(usuario: Usuario) {
     const bodyReq = JSON.stringify(usuario);
     const myHeaders = new Headers({ "Content-Type": "application/json" });
+    // return this.http.post(
+    //   this.apiRoot.concat('signup/'),
+    //   { username, email, password1, password2 }
+    // ).pipe(
+    //   tap(response => this.setSession(response)),
+    //   shareReplay(),
+    // );
     return this.http
       .post(this.apiRoot, bodyReq, {
         headers: myHeaders,
