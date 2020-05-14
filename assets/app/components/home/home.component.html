@@ -1,8 +1,22 @@
-<div class="card">
-    <div class="card-header">
-        Home
+<a *ngIf="!autenticado; then home else Mensagens"></a>
+<ng-template #home>
+    <div class="card nao-autenticado">
+        <div class="card-header">
+            <a [routerLink]="['/']" class="link-nav"><i class="fa fa-lock"></i>Realize o login</a>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Conteudo bloqueado</h5>
+        </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Conteudo</h5>
+</ng-template>
+<ng-template #Mensagens>
+    <div class="card">
+        <div class="card-header">
+            <div class="float-left">Mensagens</div>
+            <div class="float-right"> <a (click)="sair();" class="link-nav"><i class="fa fa-power-off"></i><span>sair</span></a></div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Conteudo</h5>
+        </div>
     </div>
-</div>
+</ng-template>

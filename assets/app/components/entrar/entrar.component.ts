@@ -26,10 +26,15 @@ export class EntrarComponent implements OnInit {
     this.usuarioService.entrar(usuarioAux).subscribe(
       (dadosSucesso) => {
         console.log("subscribe SUCESS:", dadosSucesso);
+        localStorage.setItem(
+          "usuario",
+          JSON.stringify({ email: dadosSucesso.email })
+        );
         this.router.navigate(["home"]);
       },
       (dadosErro) => {
         console.log("subscribe ERRO:", dadosErro);
+        window.localStorage.removeItem("usuario");
         this.router.navigate(["usuario/entrar"]);
       }
     );

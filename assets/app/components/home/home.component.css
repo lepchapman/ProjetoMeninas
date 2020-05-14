@@ -1,0 +1,21 @@
+a.link-nav{
+  color:  rgba(255, 0, 0, 0.7);
+}
+.card-title{
+    margin: 0 130px;
+    font-weight: bold;
+    color: #bdbdbd;
+}
+.float-right a.link-nav{
+  color: #00b7ff;
+}
+.float-right a.link-nav span{
+  font-size: 17px;
+  margin-right: -80px;
+}
+.float-left{
+  font-size: 20px;
+}
+.nao-autenticado .link-nav,.nao-autenticado .card-title{
+  margin-left: -10px;
+}
