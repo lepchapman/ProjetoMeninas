@@ -1,22 +1,17 @@
 import { Routes, RouterModule } from "@angular/router";
-import { EntrarComponent } from "../app/components/entrar/entrar.component";
-import { CadastrarComponent } from "../app/components/cadastrar/cadastrar.component";
+import { USUARIO_ROUTES } from "../app/components/usuario/usuario.routers";
 import { HomeComponent } from "../app/components/home/home.component";
-//import { UsuarioService } from "../app/components/usuario/usuario.service";
+import { UsuarioComponent } from "../app/components/usuario/usuario.component"
 const APP_ROUTER: Routes = [
-  { path: "", redirectTo: "/entrar", pathMatch: "full" },
+  { path: "", redirectTo: "usuario/entrar", pathMatch: "full" },
   {
-    path: "entrar",
-    component: EntrarComponent,
-  },
-  {
-    path: "cadastrar",
-    component: CadastrarComponent,
+    path: "usuario",
+    component:UsuarioComponent,
+    children:USUARIO_ROUTES
   },
   {
     path: "home",
-    component: HomeComponent, 
-   // canActivate:[UsuarioService]
+    component: HomeComponent,
   },
 ];
 export const myrouting = RouterModule.forRoot(APP_ROUTER);

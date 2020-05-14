@@ -3,23 +3,12 @@ import { Injectable, EventEmitter } from "@angular/core";
 import { Usuario } from "./usuario.model";
 import "rxjs/Rx";
 import { Observable } from "rxjs";
-
-//Adicionando os imports para o jwt
-// import {
-//   HttpClient,
-//   HttpInterceptor,
-//   HttpRequest,
-//   HttpHandler,
-//   HttpEvent,
-// } from "@angular/common/http";
-// import { CanActivate, Router } from "@angular/router";
-// import { tap, shareReplay } from "rxjs/operators";
-// import * as jwtDecode from "jwt-decode";
-// import * as moment from "moment";
+import { CanActivate, Router } from "@angular/router";
 
 @Injectable()
 export class UsuarioService {
   private UsuarioSService: Usuario[] = [];
+  public estaAutenticado:boolean = false;
   public apiRoot = "http://localhost:3000/usuario";
   constructor(private http: Http) {}
 
@@ -50,6 +39,7 @@ export class UsuarioService {
   entrar(usuario: Usuario) {
     const bodyReq = JSON.stringify(usuario);
     const myHeaders = new Headers({ "Content-Type": "application/json" });
+  
     return this.http
       .post(this.apiRoot + "/entrar", bodyReq, {
         headers: myHeaders,
@@ -63,6 +53,7 @@ export class UsuarioService {
         );
         console.log("objUserSave:", newObjUsuario);
         this.UsuarioSService.push(newObjUsuario);
+        this.estaAutenticado = true;
         return newObjUsuario;
       })
       .catch((myError: Response) =>

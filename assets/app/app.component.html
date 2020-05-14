@@ -1,28 +1,10 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12 ">
-            <div class="card text-center">
-                <div class="card-header">
-                    <!-- [ngStyle]="{'background-color': style1 ? 'red' : (style2 ? 'blue' : null) }"  -->
-                    <a [routerLink]="['entrar']" id="entrar" class="link-nav"><i class="fa fa-user"></i>Entrar</a>
-                    <a [routerLink]="['cadastrar']" id="cadastrar" class="link-nav"><i class="fa fa-user-plus"></i>Cadastro</a>
-                </div>
-                <div class="card-body">
-                    <!--Aqui fica o compoments Cadastro/Login-->
-                   <router-outlet></router-outlet>
-                </div>
-
-                    <!-- 
-                        --Aqui são as mensagens de erro ou sucesso--
-                        <div class="message-response">
-                            <div class="alert alert-error" role="alert">
-                                Message ERROR or SUCESS
-                            </div>
-                        </div>
-                    -->
-
-            </div>
-        </div>
-    </div>
+    <router-outlet></router-outlet>
+    <!-- <ng-template *ngIf="acessoNegado; else acessoPermitido">
+        <app-usuario></app-usuario>
+    </ng-template>
+    <ng-template #acessoPermitido>
+        <app-home></app-home>
+    </ng-template> -->
 </div>
 <!-- https://github.com/humrochagf/post-jwt-frontend/blob/master/src/app/login.component.ts -->
