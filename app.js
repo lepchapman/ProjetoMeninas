@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
 var appRoutesUsuario = require('./routes/usuario');
+var messageRouters = require('./routes/messages');
 var app = express();
 mongoose.connect('mongodb://localhost:27017/node-angular');
 // view engine setup
@@ -27,6 +28,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
     next();
 });
+app.use('/home/mensagens', messageRouters);
 app.use('/usuario',appRoutesUsuario);
 app.use('/', appRoutes);
 

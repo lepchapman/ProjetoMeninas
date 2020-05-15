@@ -8,6 +8,9 @@ import { CadastrarComponent } from "./components/cadastrar/cadastrar.component";
 import { EntrarComponent } from "./components/entrar/entrar.component";
 import { UsuarioComponent } from "./components/usuario/usuario.component";
 import { HomeComponent } from "./components/home/home.component";
+import { MessageInputComponent } from "./components/messageInput/message-input.component";
+import { MessageListComponent } from "./components/messageList/message-list.component";
+import { MessagesComponent } from "./components/messages/message.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +18,9 @@ import { HomeComponent } from "./components/home/home.component";
     EntrarComponent,
     UsuarioComponent,
     HomeComponent,
+    MessageInputComponent,
+    MessageListComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

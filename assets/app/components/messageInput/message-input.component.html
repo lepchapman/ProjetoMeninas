@@ -1,0 +1,7 @@
+<form (ngSubmit)="onSubmit(refLocalForm)" #refLocalForm="ngForm" ngNativeValidate>
+    <div class="form-group">
+        <input type="text" id="myContent" class="form-control" [ngModel]="messageLoad?.content" name="myContentngForm"
+            required oninvalid="this.setCustomValidity('Campo Vazio')" oninput="setCustomValidity('')">
+        <button type="submit" class="btn btn-primary salvar">Salvar mensagem</button>
+    </div>
+</form>

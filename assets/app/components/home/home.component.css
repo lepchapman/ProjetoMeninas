@@ -16,6 +16,6 @@ a.link-nav{
 .float-left{
   font-size: 20px;
 }
-.nao-autenticado .link-nav,.nao-autenticado .card-title{
+.nao-autenticado .link-nav,.nao-autenticado .card-title,.autenticado .card-title{
   margin-left: -10px;
 }

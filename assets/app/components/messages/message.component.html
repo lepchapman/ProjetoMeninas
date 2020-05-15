@@ -1,0 +1,18 @@
+<div class="mainMessage">
+    <article class="card card-default">
+        <div class="card-body">
+            {{ messageVarClasse.content }}
+        </div>
+        <footer class="card-footer">
+            <div class="author">
+                {{ messageVarClasse.username }}
+            </div>
+            <div class="config">
+                <a (click)="onEditService()" data-toggle="tooltip" data-placement="top" title="Editar"><i
+                        class="fa fa-edit"></i></a>
+                <a (click)="onDeleteService()" data-toggle="tooltip" data-placement="top" title="Deletar"><i
+                        class="fa fa-trash"></i></a>
+            </div>
+        </footer>
+    </article><br>
+</div>

@@ -20,12 +20,11 @@ export class UsuarioService {
       })
       .map((responseRecebida: Response) => {
         var aux = responseRecebida.json();
-        console.log("responseRecebida:", aux);
         const newObjUsuario = new Usuario(
           aux.objUserSave.email,
           aux.objUserSave.password,
           aux.objUserSave.firstName,
-          aux.objUserSave.lastName
+          aux.objUserSave.lastName,
         );
         this.UsuarioSService.push(newObjUsuario);
         return newObjUsuario;
@@ -45,12 +44,10 @@ export class UsuarioService {
       })
       .map((responseRecebida: Response) => {
         var aux = responseRecebida.json();
-        console.log("responseRecebida:", aux);
         const newObjUsuario = new Usuario(
           aux.objUserSave.email,
-          aux.objUserSave.password
+          aux.objUserSave.firstName,
         );
-        console.log("objUserSave:", newObjUsuario);
         this.UsuarioSService.push(newObjUsuario);
         this.estaAutenticado = true;
         return newObjUsuario;

@@ -1,0 +1,22 @@
+/* .mainMessage{
+    width: 90%;
+    margin-left: 16px;
+    margin-top: 10px;
+} */
+.author{
+    display: inline-block;
+    font-size: 12px;
+    font-style: italic;
+    width: 80%;
+}
+.config{
+    display: inline-block;
+    text-align: right;
+    font-size: 12px;
+    width: 19%;
+}
+a .fa, a .fas{
+    font-size: 25px;
+    color:#0C6980;
+}
+

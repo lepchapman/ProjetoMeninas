@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Route, Router } from "@angular/router";
+import { Message } from "../messages/message.model";
 
 @Component({
   selector: "app-home",
@@ -10,9 +11,9 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) {}
   autenticado: boolean = false;
   local = JSON.parse(localStorage.getItem("usuario"));;
-
+  messageBinding: Message = new Message("Messages","najuleflix");
   ngOnInit() {
-    console.log("Local:", localStorage.getItem("usuario"));
+    //console.log("Local:", localStorage.getItem("usuario"));
     if (this.local != null) {
       this.autenticado = true;
     } else{
