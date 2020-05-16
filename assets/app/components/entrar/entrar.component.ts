@@ -25,11 +25,8 @@ export class EntrarComponent implements OnInit {
     const usuarioAux = new Usuario(form.value.emailTS, form.value.passwordTS);
     this.usuarioService.entrar(usuarioAux).subscribe(
       (dadosSucesso) => {
-        localStorage.setItem(
-          "usuario",
-          JSON.stringify({ email: dadosSucesso.email, firstName: dadosSucesso.firstName })
-        );
-        this.router.navigate(["home"]);
+       localStorage.setItem("usuario",JSON.stringify({ nome:dadosSucesso.firstName,sobrenome:dadosSucesso.lastName,email:dadosSucesso.email }));
+       this.router.navigate(["home"]);
       },
       (dadosErro) => {
         window.localStorage.removeItem("usuario");

@@ -11,7 +11,9 @@ router.get('/', (req, res, next) => {
                 myError: err
             })
         }
+        console.log("MENSAGENS:",result);
         res.status(200).json({
+          
             myMsgSucess: 'Mensagem recuperada com sucesso',
             objsMessageSRecuperados: result
         })

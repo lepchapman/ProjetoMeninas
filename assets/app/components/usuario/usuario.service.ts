@@ -46,7 +46,9 @@ export class UsuarioService {
         var aux = responseRecebida.json();
         const newObjUsuario = new Usuario(
           aux.objUserSave.email,
+          null,
           aux.objUserSave.firstName,
+          aux.objUserSave.lastName,
         );
         this.UsuarioSService.push(newObjUsuario);
         this.estaAutenticado = true;

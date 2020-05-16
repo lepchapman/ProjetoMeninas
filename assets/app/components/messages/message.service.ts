@@ -9,10 +9,13 @@ export class MessageService {
   private messageSService: Message[] = [];
   public apiRoot = "http://localhost:3000/home/mensagens";
   messageIsEdit = new EventEmitter<Message>();
+  local = JSON.parse(localStorage.getItem("usuario"));
+
   constructor(private http: Http) {}
 
   addMessage(message: Message) {
-    console.log("messageSService ADD:", this.messageSService);
+    console.log('localaddMessage',this.local);
+   // console.log("messageSService ADD:", this.messageSService);
     const bodyReq = JSON.stringify(message);
     const myHeaders = new Headers({ "Content-Type": "application/json" });
     return this.http
@@ -23,9 +26,9 @@ export class MessageService {
         var aux = responseRecebida.json();
         const newObjMessage = new Message(
           aux.objMessageSave.content,
-          "Nayara",
+          this.local.nome,
           aux.objMessageSave._id,
-          null
+          this.local.email
         );
         this.messageSService.push(newObjMessage);
         return newObjMessage;
