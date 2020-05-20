@@ -47,7 +47,7 @@ export class MessageService {
         let transformedCastMassagesModelFrontEnd: Message[] = [];
         for (let msg of messageSResponseRecebida) {
           transformedCastMassagesModelFrontEnd.push(
-            new Message(msg.content, "Nayara", msg._id, null)
+            new Message(msg.content, this.local.nome, msg._id, null)
           );
         }
         this.messageSService = transformedCastMassagesModelFrontEnd;
