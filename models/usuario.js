@@ -40,4 +40,4 @@ UsuarioSchema.pre('save', function (next) {
     });
 });
 
-mongoose.model('Usuario',UsuarioSchema);
+mongoose.model('usuario',UsuarioSchema);

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Usuario = mongoose.model('Usuario');
+// const mongoose = require('mongoose');
+const Usuario = require('../models/usuario');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const createUserToken = (UsuarioId) => {
@@ -68,19 +68,19 @@ module.exports = {
             })
         }
     },
-    // async uploadImage(req, res) {
-    //     try {
-    //         const usuario = await Usuario.updateOne({ _id: res.locals.auth_data.id },
-    //             {$set: { UrlFoto: `files/${req.file.filename}` }});
+    async uploadImage(req, res) {
+        try {
+            const usuario = await Usuario.updateOne({ _id: res.locals.auth_data.id },
+                {$set: { UrlFoto: `files/${req.file.filename}` }});
 
-    //             return res.status(200).json({
-    //                 usuario
-    //             });
-    //     }
-    //     catch (err) {
-    //         return res.status(400).json({
-    //             erro: err
-    //         })
-    //     }
-    // }
+                return res.status(200).json({
+                    usuario
+                });
+        }
+        catch (err) {
+            return res.status(400).json({
+                erro: err
+            })
+        }
+    }
 }
