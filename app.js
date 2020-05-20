@@ -9,6 +9,8 @@ var appRoutes = require('./routes/app');
 
 var app = express();
 
+mongoose.connect('mongodb://localhost:27017/node-angular', { useUnifiedTopology: true, useNewUrlParser: true });
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
