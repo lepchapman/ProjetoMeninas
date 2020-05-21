@@ -1,0 +1,34 @@
+<div class="fadeIn first">
+    <header class="login-cta">
+        <h2>Cadastro</h2>
+    </header>
+    <img src="" id="icon" alt="CPA Image" width="180px" height="100px" />
+</div>
+<form>
+    <div class="form-row fadeIn second">
+        <input formControlName="Nome" placeholder="Nome" type="text" required>
+        <span>Nome</span>
+    </div>
+    <div class="form-row fadeIn second">
+        <input formControlName="Sobrenome" placeholder="Sobrenome" type="text" required>
+        <span>Sobrenome</span>
+    </div>
+    <div class="form-row fadeIn second">
+        <input formControlName="Email" placeholder="Email" type="email" required>
+        <span>Email</span>
+    </div>
+    <div class="form-row fadeIn third">
+        <input formControlName="Senha" placeholder="Senha" type="password" required>
+        <span>Senha</span>
+    </div>
+    <div class="form-row fadeIn fourth"></div>
+    <div class="form-row fadeIn fourth">
+        <button type="submit" (click)="submit()" type="submit">Cadastrar</button>
+    </div>
+    <header>
+        <h2></h2>
+    </header>
+    <div class="form-row fadeIn fourth">
+        <a (click)="onClickLogin()" class="logar">Login</a>
+    </div>
+</form>

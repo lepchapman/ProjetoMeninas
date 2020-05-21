@@ -1,0 +1,26 @@
+<div class="fadeIn first">
+    <header class="login-cta">
+        <h2>Login</h2>
+    </header>
+    <img src="" id="icon" alt="CPA Image" width="180px" height="100px" />
+</div>
+<form>
+    <div class="form-row fadeIn second">
+        <input  formControlName="email" placeholder="email" type="text" required>
+        <span>Email</span>
+    </div>
+    <div class="form-row fadeIn third">
+        <input formControlName="senha" placeholder="senha" type="password" required>
+        <span>Senha</span>
+    </div>
+    <div class="form-row fadeIn fourth"></div>
+    <div class="form-row fadeIn fourth">
+        <button type="submit" (click)="submit()" >Entrar</button>
+    </div>
+    <header>
+        <h2></h2>
+    </header>
+    <div class="form-row fadeIn fourth">
+        <a (click)="onClickCadastrar()" class="logar">Cadastre-se</a>
+    </div>
+</form>
